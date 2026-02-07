@@ -1,117 +1,58 @@
-# Custom-Mini-Shell
+# Custom_Mini_Shell_in_C
+
 Custom command-line shell written in C demonstrating core operating system concepts such as process management, system calls, and command parsing.
 
-The shell demonstrates core OS concepts such as process creation, command execution, and system call usage.
-
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Objectives](#objectives)
-- [Features](#features)
-- [Methodology](#methodology)
-- [System Architecture](#system-architecture)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Sample Execution](#sample-execution)
-- [Learning Outcomes](#learning-outcomes)
-- [Future Improvements](#future-improvements)
+The shell illustrates how operating systems execute commands by creating child processes, executing programs using system calls, and managing parent–child process behavior.
 
 ---
 
 ## Features
-Custom command-line interface
-Executes standard Unix commands using fork() and exec()
-Supports built-in commands
-Handles multiple command inputs
-Demonstrates parent–child process behavior
-Uses low-level system calls for process control
+
+- Custom command-line interface
+- Executes standard Unix commands using `fork()` and `exec()`
+- Supports built-in commands
+- Handles multiple command inputs
+- Demonstrates parent–child process behavior
+- Uses low-level system calls for process control
+
 ---
 
 ## Concepts Covered
+
 This project demonstrates important Operating System concepts, including:
 
-Process creation (fork)
-Program execution (exec)
-Process synchronization
-System calls
-Command parsing
-Basic shell architecture
-
-## Technologies Used
-C Programming Language
-Unix/Linux System Calls
-GCC Compiler
-Linux / Unix-based OS
----
-
-## Methodology
-
-1. The shell displays a command prompt to the user.
-2. The user enters a command.
-3. The command is parsed into tokens.
-4. A child process is created using `fork()`.
-5. The child process executes the command using `exec()`.
-6. The parent process waits for the child process to complete.
-7. The shell returns to the prompt for the next command.
-
----
-
-## System Architecture
-
-User Command
-↓
-Custom Shell
-↓
-fork()
-↓
-Child Process
-↓
-exec()
-↓
-Operating System Kernel
-
+- Process creation (`fork`)
+- Program execution (`exec`)
+- Process synchronization
+- System calls
+- Command parsing
+- Basic shell architecture
 
 ---
 
 ## Technologies Used
 
 - C Programming Language
-- Linux System Calls
+- Unix/Linux System Calls
 - GCC Compiler
-- Operating Systems Concepts
+- Linux / Unix-based Operating System
 
 ---
 
-## Project Structure
+## How It Works
 
-
----
-
-## Sample Execution
-CustomShell> ls
-CustomShell> pwd
-CustomShell> echo Hello World
-
+1. The shell continuously prompts the user for input.
+2. User commands are parsed into executable arguments.
+3. A child process is created using `fork()`.
+4. The command is executed using `exec()` in the child process.
+5. The parent process waits for execution to complete.
+6. Control returns to the shell for the next command.
 
 ---
 
-## Learning Outcomes
+## Compilation and Execution
 
-- Understanding of process creation and management
-- Practical use of fork and exec system calls
-- Command interpretation workflow
-- Shell and kernel interaction
+Compile the shell using GCC:
 
----
-
-## Future Improvements
-
-- Support for piping (`|`)
-- Input and output redirection
-- Background process execution
-- Command history feature
-- Auto-completion support
-
+```bash
+gcc OS\ Custom\ Shell\ Final.c -o custom_shell
